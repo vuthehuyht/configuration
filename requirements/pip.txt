@@ -4,7 +4,7 @@
 #
 #    make upgrade
 #
-wheel
+wheel==0.42.0
     # via -r requirements/pip.in
 
 # The following packages are considered to be unsafe in a requirements file:
