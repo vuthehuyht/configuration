@@ -11,10 +11,8 @@
 # 
 
 - name: install application requirements
-  ansible.builtin.pip:
-    name: pip==20.0.2
-    virtualenv: '{{ ecommerce_worker_home }}/venvs/{{ ecommerce_worker_service_name }}'
   pip:
+    name: pip==20.0.2
     requirements: '{{ ecommerce_worker_requirements_base }}/{{ item }}'
     virtualenv: '{{ ecommerce_worker_home }}/venvs/{{ ecommerce_worker_service_name }}'
     state: present
