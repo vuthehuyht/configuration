@@ -141,25 +141,25 @@
     - install
     - install:system-requirements
 
-# - name: Build virtualenv with Python 3.8
-#   command: "virtualenv --python=python3.8 {{ edx_service_venv_dir }}"
-#   args:
-#     creates: "{{ edx_service_venv_dir }}/bin/pip"
-#   become_user: "{{ edx_service_user }}"
-#   when: edx_service_use_python38
-#   tags:
-#     - install
-#     - install:system-requirements
+- name: Build virtualenv with Python 3.8
+  command: "virtualenv --python=python3.8 {{ edx_service_venv_dir }}"
+  args:
+    creates: "{{ edx_service_venv_dir }}/bin/pip"
+  become_user: "{{ edx_service_user }}"
+  when: edx_service_use_python38
+  tags:
+    - install
+    - install:system-requirements
 
-# - name: build virtualenv with python3
-#   command: "virtualenv --python=python3 {{ edx_service_venv_dir }}"
-#   args:
-#     creates: "{{ edx_service_venv_dir }}/bin/pip"
-#   become_user: "{{ edx_service_user }}"
-#   when: edx_service_use_python3 and not edx_service_use_python38
-#   tags:
-#     - install
-#     - install:system-requirements
+- name: build virtualenv with python3
+  command: "virtualenv --python=python3 {{ edx_service_venv_dir }}"
+  args:
+    creates: "{{ edx_service_venv_dir }}/bin/pip"
+  become_user: "{{ edx_service_user }}"
+  when: edx_service_use_python3 and not edx_service_use_python38
+  tags:
+    - install
+    - install:system-requirements
 
 - name: Replace deploy host to sandbox dns name
   replace:
