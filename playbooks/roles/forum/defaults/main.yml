@@ -92,7 +92,7 @@ devstack_forum_env:
 forum_user: "forum"
 FORUM_RUBY_VERSION: "2.5.7"
 forum_source_repo: "https://github.com/edx/cs_comments_service.git"
-FORUM_VERSION: "master"
+FORUM_VERSION: "open-release/koa.master"
 
 #
 # test config
